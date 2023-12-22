@@ -53,7 +53,7 @@ body
     background-size: fill;
 }
 
-#sign-up{
+#signup{
     background-image: url('background3.jpg');
     background-size: fill;
 }
@@ -581,11 +581,11 @@ body
 		  </div>
 
 		  <div class="mySlides">
-			<img src="im7.jpeg" style="width:100%">
+			<img src="im7.jpg" style="width:100%">
 		  </div>
 
 		  <div class="mySlides">
-			<img src="im8.jpeg" style="width:100%">
+			<img src="im8.jpg" style="width:100%">
 		  </div>
 
 		  <div class="mySlides">
@@ -593,11 +593,11 @@ body
 		  </div>
 
 		  <div class="mySlides">
-			<img src="im10.jpeg" style="width:100%">
+			<img src="im10.jpg" style="width:100%">
 		  </div>
 
 		  <div class="mySlides">
-			<img src="im11.jpeg" style="width:100%">
+			<img src="im11.jpg" style="width:100%">
 		  </div>
 
 		  <div class="mySlides">
@@ -632,19 +632,19 @@ body
 			  	<img class="demo cursor" src="im6.jpg" style="width:100%" onclick="currentSlide(6)" >
 			</div>
 			<div class="column">
-			  	<img class="demo cursor" src="im7.jpeg" style="width:100%" onclick="currentSlide(7)" >
+			  	<img class="demo cursor" src="im7.jpg" style="width:100%" onclick="currentSlide(7)" >
 			</div>
 			<div class="column">
-			  	<img class="demo cursor" src="im8.jpeg" style="width:100%" onclick="currentSlide(8)" >
+			  	<img class="demo cursor" src="im8.jpg" style="width:100%" onclick="currentSlide(8)" >
 			</div>
 			<div class="column">
 			  	<img class="demo cursor" src="im9.jpeg" style="width:100%" onclick="currentSlide(9)" >
 			</div>
 			<div class="column">
-			  	<img class="demo cursor" src="im10.jpeg" style="width:100%" onclick="currentSlide(10)" >
+			  	<img class="demo cursor" src="im10.jpg" style="width:100%" onclick="currentSlide(10)" >
 			</div>
 			<div class="column">
-			  	<img class="demo cursor" src="im11.jpeg" style="width:100%" onclick="currentSlide(11)" >
+			  	<img class="demo cursor" src="im11.jpg" style="width:100%" onclick="currentSlide(11)" >
 			</div>
 			<div class="column">
 				<img class="demo cursor" src="im12.jpeg" style="width:100%" onclick="currentSlide(12)" >
