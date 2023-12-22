@@ -123,6 +123,11 @@ body
       display: none;
 }
 
+.error-message {
+	font-family: arial;
+	color: red;
+}
+
 </style>
 </head>
 
@@ -844,7 +849,7 @@ body
 
 <h1><i>Sign-In</i></h1>
 
-<form>
+<form id="signin">
 
 	<label for="username">Username</label><br>
 	<input type="text" id="username" name="username"></input><br><br>
@@ -852,8 +857,10 @@ body
 	<label for="password">Password </label><br>
 	<input type="text" id="password" name="password"></input><br><br>
 
-	<button type="button">Sign-in</button>
-	<input type="reset" value="Reset">
+	<div id="errorMessage" class="error-message"></div>
+	
+	<input type="button" value="Sign-In" onclick="validateForm()">
+	<input type="reset" value="Reset" onclick="resetForm()">
 
 	<br><br>
 	<p>You don't have an account? Sign-up now!</p>
@@ -861,6 +868,28 @@ body
 
 </form>
 </center>
+
+<script>
+        function validateForm() {
+		var username = document.getElementById("username").value;
+		var password = document.getElementById("password").value;
+		var errorMessage = document.getElementById("errorMessage");
+		
+		if (username === "" || password === ""){
+			errorMessage.textContent = "Please fill out all fields!";
+		} else {
+				errorMessage.textContent = " ";
+			}
+		}	
+		
+		function resetForm() {
+            // Clear all fields
+            document.getElementById("signin").reset();
+
+            // Set focus on the first text field
+            document.getElementById("username").focus();
+        }
+</script>
 
 <br>
 <br>
@@ -956,10 +985,10 @@ body
 
 <h1><i>Sign-Up</i></h1>
 
-<form>
+<form id="signup">
 
 	<label for="fname">First Name</label><br>
-	<input type="text" id="firstname" name="fname"></input><br><br>
+	<input type="text" id="fname" name="fname"></input><br><br>
 	
 	<label for="lname">Last Name</label><br>
 	<input type="text" id="lname" name="lname"></input><br><br>
@@ -982,15 +1011,53 @@ body
 	<label for="renpassword">Re-Enter Password</label><br>
 	<input type="text" id="renpassword" name="renpassword"></input><br><br>
 
-	<button type="button">Sign-Up</button>
-	<input type="reset" value="Reset">
+	<div id="errorMessage" class="error-message"></div>
+	
+	<input type="button" value="Sign-Up" onclick="validateForm()">
+	<input type="reset" value="Reset" onclick="resetForm()">
 	
 	<br><br>
 
 </form>
 </center>
 
-<div id="disclaimer-signup">
+	<script>
+		function validateForm() {
+		var fname = document.getElementById("fname").value;
+		var lname = document.getElementById("lname").value;
+		var genderMale = document.getElementById("male").checked;
+		var genderFemale = document.getElementById("female").checked;
+		var email = document.getElementById("email").value;
+		var username = document.getElementById("username").value;
+		var password = document.getElementById("password").value;
+		var renpassword = document.getElementById("renpassword").value;
+		var errorMessage = document.getElementById("errorMessage");
+		
+		if (fname === "" || lname === "" || email === "" || username === "" || 
+password === "" || renpassword === "" ){
+			errorMessage.textContent = "Please fill out all fields!";
+		} else if (!genderMale && !genderFemale) {
+			errorMessage.textContent = "Please select a gender.";
+		} else {
+				errorMessage.textContent = " ";
+			}
+		}
+
+		
+        function resetForm() {
+            // Clear all fields
+            document.getElementById("signup").reset();
+
+            // Set focus on the first text field
+            document.getElementById("fname").focus();
+        }
+    </script>
+<br>
+<br>
+<br>
+<br>
+
+<a href="#signup" style="text-decoration: none ;"><div id="disclaimer-signup">
    <center>
       <p>Disclaimer: This website is made for educational purposes only as well as to give
 	  general information about the author. </p>
@@ -1003,7 +1070,7 @@ body
       <p>The entire content in this website belongs to Nurin Mardiana Humaira only.</p>
    </center>
 </div>
-
+</a>
 </div>
 
 
@@ -1033,7 +1100,7 @@ body
     }
 	
 	document.addEventListener('DOMContentLoaded', function() {
-        showSection('logo');  // Secara lalai tunjukkan bahagian logo
+        showSection('logo'); 
     });
 	
 	function signOut() {
